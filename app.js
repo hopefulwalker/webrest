@@ -1,4 +1,5 @@
 var express = require('express');
+var db = require('./model/mongodb');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -26,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', cors());
 app.use('/', routes);
-app.use('/api/menuitem', menuitem);
+// app.use('/api/menuitem', menuitem);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
