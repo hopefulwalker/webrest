@@ -1,6 +1,9 @@
 'use strict';
 
 let mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/test');
+
 let menuitemSchema = mongoose.Schema({
     sysName: String,
     id: String,
