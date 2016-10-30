@@ -1,14 +1,14 @@
 'use strict';
 
-let mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-let menuitemSchema = mongoose.Schema({
+var menuitemSchema = mongoose.Schema({
     sysName: String,
-    id: String,
+    id: {type: String, unique: true},
     icon: String,
     url: String
 });
 
-let MenuItem = mongoose.model('MenuItem', menuitemSchema);
+var MenuItem = mongoose.model('MenuItem', menuitemSchema, 'menuitems');
 
 module.exports = MenuItem;
