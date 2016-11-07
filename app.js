@@ -9,7 +9,7 @@ var cors = require('cors');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var menuitem = require('./routes/menuitem');
+var menus = require('./routes/menus');
 
 var app = express();
 
@@ -26,9 +26,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', cors());
-app.use('/', routes);
-// app.use('/api/menuitem', menuitem);
+app.use('/api/menu', menus);
+
 app.use('/users', users);
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -38,7 +39,6 @@ app.use(function (req, res, next) {
 });
 
 // error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {

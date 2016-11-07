@@ -7,7 +7,7 @@ var opts = {
     }
 };
 // Build the connection string
-var dbURI = 'mongodb://localhost/MongoosePM';
+var dbURI = 'mongodb://localhost/mongoosedb';
 // Create the database connection
 
 // switch(app.get('env')){
